@@ -21,7 +21,7 @@ public class ProductDAO {
 	public ProductDAO() {
 		try {
 			Context init = new InitialContext();
-			DataSource ds = (DataSource)init.lookup("java:comp/env/first");
+			DataSource ds = (DataSource)init.lookup("java:comp/env/zaq");
 			con = ds.getConnection();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
