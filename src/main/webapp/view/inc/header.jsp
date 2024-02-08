@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,6 +18,7 @@
 		<li id="li_logo"><input type="text" /><input type="button" value="검색"/></li>
 	</ul>
 	<div id="void"><a href="/firstProj/admin/admin">관리자</a></div>
+	<div id="void"><a href="/firstProj/product/ProductList">ㅇㅇㅇ</a></div>
 </div>
 <div id="category">
 	<div id="void"></div>
@@ -29,3 +31,4 @@
 </div>
 </body>
 </html>
+

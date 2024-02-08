@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <h3>회사소개 이용약관 개인정보처리방침 이용안내 입점문의</h3>
@@ -7,3 +8,4 @@
 copyright © 커피창고. All rights reserved.
 
 hosting by cafe24 카페24(주)
+
