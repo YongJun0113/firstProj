@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 //import model_p.BoardDTO;
 //import model_p.PPData;
 
-public class main implements MainService {
+public class Main implements MainService {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
