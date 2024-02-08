@@ -28,11 +28,11 @@ public class MainController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//System.out.println(request.getRequestURI());
-		//System.out.println(request.getContextPath());
+		System.out.println(request.getRequestURI());
+		System.out.println(request.getContextPath());
 		String cate = "main/";
 		String service = request.getRequestURI().substring((request.getContextPath()+"/"+cate).length());
-		//System.out.println(service);
+		System.out.println(service);
 		request.setAttribute("mainUrl",cate+service+".jsp");
 		try {
 			MainService ser = (MainService)Class.forName("main_con."+service).newInstance();
