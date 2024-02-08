@@ -1,6 +1,6 @@
-<%@page import="java.io.PrintWriter"%>
-<%@page import="member_p.MemberDAO"%>
-<%@page import="member_p.MemberDTO"%>
+
+<%@page import="dao_p.MemberDAO"%>
+<%@page import="dto_p.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,13 +13,17 @@
 </head>
 <body>
 <%
+
+		
+		/*
 		String userid = request.getParameter("userid"); 
 		String pw = request.getParameter("pw");
 		
 		MemberDAO dao = new MemberDAO();
 		int result = dao.login(userid,pw);
 		System.out.println(result + "<===리턴 받은 result");
-
+		*/
+		
 		/*
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO();
@@ -85,7 +89,14 @@
 	*/
 	//String userid = request.getParameter("userid");
 	//String pw     = request.getParameter("pw");
+	
 %>
-
+		
+		
+	
+		<script type="text/javascript">
+            alert('로그인성공');
+            location.href='../main/main.jsp';
+        </script>	
 </body>
 </html>
