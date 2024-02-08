@@ -19,6 +19,7 @@
 	</ul>
 	<div id="void"><a href="/firstProj/admin/admin">관리자</a></div>
 	<div id="void"><a href="/firstProj/product/ProductList">ㅇㅇㅇ</a></div>
+	<div id="void"><a href="/firstProj/board/BoardList">게시판</a></div>
 </div>
 <div id="category">
 	<div id="void"></div>
