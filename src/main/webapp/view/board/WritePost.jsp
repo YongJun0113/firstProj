@@ -45,6 +45,13 @@
     if (message != null && message != "") {
         alert(message);
     }
+    
+    $(".btn1").click(function(){
+    	if($("writeTitle")==null){
+    		alert("dddd")
+    		
+    	}
+    })
 </script>
 <h2>게시판 글쓰기</h2>
 <form action="WritePostHandler" method="get" enctype="multipart/form-data">
@@ -62,7 +69,7 @@
 			<td><input type="file" name = "perFile"/></td>
 		</table>
 		<div class = "subButton">
-			<input type="submit" value="등록"/>
+			<input type="button" class="btn1" value="등록"/>
 			<input type="button" value="취소" onclick="cancel()"/>
 		</div>
 	</div>

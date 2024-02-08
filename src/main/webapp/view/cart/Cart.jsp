@@ -12,10 +12,11 @@
 	}
 </style>
 <script>
- function del(){
+
+ function del(index){
 	 
 	 if(confirm("정말 삭제하시겠습니까?")){
-		
+		 location.href = "CartDelete?no="+index;
 	 }
 	 
  }
@@ -23,11 +24,12 @@
 </script>
 <body>
 <h1>장바구니</h1>
-<form action="order.jsp">
+<form action="order">
 	<table border="">
 
 		<tr>
 			<td><input type="checkbox"/></td>
+			<td>번호</td>
 			<td>사진</td>
 			<td>상품이름</td>
 			<td>수량</td>
@@ -35,21 +37,21 @@
 			<td>배송비</td>
 			<td>삭제</td>
 		</tr>
-		<c:forEach items="${mainData }" var="dto" varStatus="no">
+		<c:forEach items="${mainData }">
 		<tr>
-			<td><input type="checkbox"/></td>
-			
+			<td><input type="checkbox" value="chk"/></td>
+			<td>${no.index+1 }</td>
 			<td><img src="${dto.cartFile }"/></td>
 			<td>${dto.cartTitle}</td>
 			<td>${dto.prodCnt }</td>
 			<td>${dto.prodPrice }</td>
-			<td rowspan="${no.index }">3,000원</td>
-			<td><a href="javascript:del()">삭제</a></td>
+			<td>3,000원</td>
+			<td><a href="#" onclick="del(${no.index+1})">삭제</a></td>
 		
 		</tr>
 		</c:forEach>
 		<tr >
-			<td colspan="7"><input type="submit" value="주문하기"/></td>
+			<td colspan="8"><input type="submit" value="주문하기"/></td>
 		</tr>
 	</table>
 	

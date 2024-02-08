@@ -30,7 +30,6 @@ public class CartReg implements CartService{
 			
 			
 			CartDTO dto = new CartDTO();
-
 			dto.setCartFile(request.getParameter("cartFile"));
 			dto.setCartTitle(request.getParameter("cartTitle"));
 			dto.setUserId(request.getParameter("userId"));
@@ -49,7 +48,7 @@ public class CartReg implements CartService{
 			}else if(request.getParameter("chk").equals("false")) {
 				request.setAttribute("mainUrl", "inc/alert.jsp");
 				request.setAttribute("msg", request.getParameter("chk"));
-				request.setAttribute("goUrl", "/testProj/product/ProductDetail?prodNum="+request.getParameter("prodNum"));
+				request.setAttribute("goUrl", "/firstProj/product/ProductDetail?prodNum="+request.getParameter("prodNum"));
 				
 			}
 			
