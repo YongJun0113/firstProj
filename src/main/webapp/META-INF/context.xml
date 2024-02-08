@@ -5,8 +5,8 @@
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver"
-		url="jdbc:mariadb://localhost:3306/jsp_db" 
-		username="green"
+		url="jdbc:mariadb://localhost:3306/proj_db" 
+		username="kmj"
 		password="123456"
 			
 	/>
