@@ -41,10 +41,10 @@
 		alert("취소되었습니다.")
 		location.href="BoardList"
 	}
-    <%-- var message = '<%= request.getAttribute("message") %>';
+    var message = '<%= request.getAttribute("message") %>';
     if (message != null && message != "") {
         alert(message);
-    } --%>
+    }
 </script>
 <h2>게시판 글쓰기</h2>
 <form action="WritePostHandler" method="get" enctype="multipart/form-data">
