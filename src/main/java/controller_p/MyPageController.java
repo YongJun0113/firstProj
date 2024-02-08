@@ -35,7 +35,7 @@ public class MyPageController extends HttpServlet {
 		
 		String cate = "myPage/";
 		String service = request.getRequestURI().substring((request.getContextPath()+"/"+cate).length());
-		System.out.println(service);
+		System.out.println(cate+service);
 		request.setAttribute("mainUrl", cate+service+".jsp");
 		try {
 			MyPageService os = (MyPageService)Class.forName("myPage_con."+service).newInstance();

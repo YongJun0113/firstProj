@@ -1,4 +1,4 @@
-package member_p;
+package dto_p;
 
 import java.util.Date;
 import java.text.ParseException;

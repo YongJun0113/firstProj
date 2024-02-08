@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<div id="header"><a href="">회원가입</a>|<a href="">로그인</a>|<a href="">고객센터</a></div>
+<div id="header"><a href="/firstProj/member/memberForm">회원가입</a>|<a href="">로그인</a>|<a href="">고객센터</a></div>
 <div id="logo">
 	<div id="void"><a href=""><img src="<c:url value="/view/inc/img/main_logo.png"/>" alt=""></a></div>
 	<ul id="logo_list">
@@ -20,6 +20,7 @@
 	<div id="void"><a href="/firstProj/admin/admin">관리자</a></div>
 	<div id="void"><a href="/firstProj/product/ProductList">ㅇㅇㅇ</a></div>
 	<div id="void"><a href="/firstProj/board/BoardList">게시판</a></div>
+	<div id="void"><a href="/firstProj/myPage/MyPageMain">aa</a></div>
 </div>
 <div id="category">
 	<div id="void"></div>
