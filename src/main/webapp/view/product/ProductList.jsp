@@ -20,7 +20,7 @@
 		display:block;
 
 	}
-	img{
+	.img>img{
 		width:130px;
 		height:150px;
 		margin-top : 10px;
