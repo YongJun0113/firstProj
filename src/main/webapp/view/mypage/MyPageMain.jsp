@@ -56,16 +56,16 @@
 		<div class="order">배송완료</div>
 		<div class="order">취소/교환/환불</div>
 	</div>
-	<a href="/firstProj/order/OrderDetail">
+	<a href="/wonduProj/order/OrderDetail">
 		<div class="cate">주문내역</div>
 	</a>
-	<a href="profileTemplate.jsp">
+	<a href="/wonduProj/profile/ProfileDetail">
 		<div class="cate"> 회원정보</div>
 	</a>
-	<a href="consultTemplate.jsp">
+	<a href="/wonduProj/consult/ConsultDetail">
 		<div class="cate">1:1 상담</div>
 	</a>
-	<a href="reviewTemplate.jsp">
+	<a href="/wonduProj/review/ReviewDetail">
 		<div class="cate">리뷰 관리</div>
 	</a> 
 </div>
