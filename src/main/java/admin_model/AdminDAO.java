@@ -55,7 +55,7 @@ public class AdminDAO {
 	public ArrayList<AdminDTO> list(){
 		ArrayList<AdminDTO> res = new ArrayList<AdminDTO>();
 		
-		sql = "select * from order";
+		sql = "select * from orderinfo";
 		try {
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
