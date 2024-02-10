@@ -50,8 +50,7 @@ public class ProductDAO {
 				dto.setProdFile(rs.getString("prodFile"));
 				dto.setProdPrice(rs.getInt("prodPrice"));
 				dto.setProdInfo(rs.getString("prodInfo"));
-				dto.setOption1(rs.getString("option1"));
-				dto.setOption2(rs.getString("option2"));
+	
 
 				res.add(dto);
 			}
@@ -82,8 +81,7 @@ public class ProductDAO {
 				dto.setProdFile(rs.getString("prodFile"));
 				dto.setProdPrice(rs.getInt("prodPrice"));
 				dto.setProdInfo(rs.getString("prodInfo"));
-				dto.setOption1(rs.getString("option1"));
-				dto.setOption2(rs.getString("option2"));
+	
 			}
 			
 		} catch (SQLException e) {

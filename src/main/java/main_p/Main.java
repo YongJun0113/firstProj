@@ -1,10 +1,11 @@
-package main_con;
+package main_p;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 //import model_p.BoardDAO;
 //import model_p.BoardDTO;
 //import model_p.PPData;
+import service_p.MainService;
 
 public class Main implements MainService {
 
