@@ -114,4 +114,43 @@ public class ProductDAO {
 		
 	}
 	
+	public  void modify(ProductDTO dto){
+		
+		sql = "update product set  prodPrice = ?, prodCate = ?, prodFile = ?, prodTitle = ?, prodInfo = ? where prodNum = ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setInt(1,dto.getProdPrice());
+			psmt.setString(2,dto.getProdCate());
+			psmt.setString(3,dto.getProdFile());
+			psmt.setString(4,dto.getProdTitle());
+			psmt.setString(5,dto.getProdInfo());
+			psmt.setInt(6,dto.getProdNum());
+		
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		
+	}
+	
+	public  void delete(int prodNum){
+		
+		sql = "delete from product where prodNum = ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setInt(1, prodNum);
+		
+			
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	}	
 }

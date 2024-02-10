@@ -42,8 +42,9 @@
 			<td>사진</td>
 			<td>상품이름</td>
 			<td>수량</td>
+			<td>용량</td>
+			<td>분쇄</td>
 			<td>금액</td>
-			<td>배송비</td>
 			<td>삭제</td>
 		</tr>
 		<c:forEach items="${mainData }" var="dto" varStatus="no">
@@ -53,15 +54,23 @@
 			<td><img src="${dto.cartFile }"/></td>
 			<td>${dto.cartTitle}</td>
 			<td>${dto.prodCnt }</td>
+			<td>${dto.option1 }</td>
+			<td>${dto.option2 }</td>
+		<c:choose>
+		<c:when test="${dto.option1 eq '1kg( 10,000원)' }">
+			<td>${(dto.prodPrice*dto.prodCnt)+10000 }</td>
+		</c:when>
+		<c:otherwise>
 			<td>${dto.prodPrice*dto.prodCnt }</td>
-			<td>3,000원</td>
+		</c:otherwise>
+		</c:choose>
 			<td><a href="#" onclick="del(${dto.no })">삭제</a></td>
 		
 		</tr>
 		</c:forEach>
 		<tr>
             <td colspan="4">총금액</td>
-            <td colspan="4">${tot }</td>
+            <td colspan="4">${tot } + 배송비 3,000원 = ${tot+3000 } </td>
         </tr>
 		<tr >
 			<td colspan="8"><input type="submit" value="주문하기"/></td>

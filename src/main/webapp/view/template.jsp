@@ -66,7 +66,7 @@
             width:200px;
             height: 44px;
         }
-                #li_t{
+               #li_t{
             list-style: none;
             float: left;
             width: 400px;

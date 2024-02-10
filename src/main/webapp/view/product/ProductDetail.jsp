@@ -2,11 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <style>
-	.wrapper{
-		width:800px;
-		height:1500px;
-		border:1px solid #000;
-	}
+
 	.box1{
 		height:500px;
 	}
@@ -14,14 +10,15 @@
 		height:600px
 	}
 	.box3{
-		height:500px;
+		height:200px;
 		background-color:#0ff;
 	}
 	.box1>div>img{
-		width:300px;
-		height:300px;
+		width:400px;
+		height:400px;
 		margin:25px;
 		float:left;
+		margin-left:100px;
 	}
 	
 	.content{
@@ -29,6 +26,7 @@
 		height:300px;
 		margin:15px;
 		float:right;
+		margin-right:100px;
 	}
 	hr~div>div{
 		width:50%;
@@ -56,6 +54,15 @@
 </style>
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script>
+
+	function del(){
+	
+	if(confirm("삭제하시겠습니까?")){
+		location.href = "ProductDelete?prodNum=${dto.prodNum}"
+		}
+	
+	}
+
 	$(function(){
 		$(".btn1").click(function(){
 			//alert("눌림")
@@ -92,8 +99,9 @@
 			location.href="Cart"
 			
 		})
+		
 	})
-
+	
 
 </script>
 <html>
@@ -102,6 +110,10 @@
 </head>
 <body>
 <div  class="wrapper">
+	<div>
+		<a href="ProductModify?prodNum=${param.prodNum }">수정</a>
+		<a href="javascript:del()">삭제</a>
+	</div>
 	<div class="box1">
 		<div><img src="${dto.prodFile }"></div>
 		<div class="content">
