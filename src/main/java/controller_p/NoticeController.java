@@ -39,7 +39,7 @@ public class NoticeController extends HttpServlet {
 	
 		NoticeService noticeservice;
 		try {
-			noticeservice = (NoticeService)Class.forName("controller_p."+service).newInstance();
+			noticeservice = (NoticeService)Class.forName("notice_p."+service).newInstance();
 			noticeservice.execute(request, response);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/template.jsp");
 			dispatcher.forward(request, response);

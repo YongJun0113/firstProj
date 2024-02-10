@@ -25,9 +25,9 @@ public class BoardEditHandler implements BoardService{
 			
 			new BoardDAO().editPost(dto);
 			
-			request.setAttribute("mainUrl", "include/alert.jsp");
-			request.setAttribute("message", "수정되었습니다.");
-			request.setAttribute("returnToList", "BoardList");
+			request.setAttribute("mainUrl", "inc/alert.jsp");
+			request.setAttribute("msg", "수정되었습니다.");
+			request.setAttribute("goUrl", "BoardList");
 			
 			System.out.println("BoardEditHandler 수정 결과 실행");
 		} catch (Exception e) {

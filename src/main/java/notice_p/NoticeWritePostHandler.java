@@ -58,13 +58,13 @@ public class NoticeWritePostHandler implements NoticeService{
 			
 			if (!request.getParameter("writeTitle").trim().isEmpty() && !request.getParameter("writeContent").trim().isEmpty()) {
 			    new NoticeDAO().writePost(dto);
-			    request.setAttribute("message", "등록되었습니다.");
-				request.setAttribute("mainUrl", "include/alert.jsp");
-				request.setAttribute("returnToList", "NoticeList");
+			    request.setAttribute("msg", "등록되었습니다.");
+				request.setAttribute("mainUrl", "inc/alert.jsp");
+				request.setAttribute("goUrl", "NoticeList");
 			}else{
-				request.setAttribute("mainUrl", "include/alert.jsp");
-			    request.setAttribute("message", "작성하지 않은 필수 항목이 있습니다.");
-				request.setAttribute("returnToList", "NoticeWritePost");
+				request.setAttribute("mainUrl", "inc/alert.jsp");
+			    request.setAttribute("msg", "작성하지 않은 필수 항목이 있습니다.");
+				request.setAttribute("goUrl", "NoticeWritePost");
 			}
 
 		} catch (Exception e) {

@@ -19,8 +19,8 @@ public class NoticeDelete implements NoticeService{
 			new etc_p.FileHandler(request).deleteFile(dto.getnoticeFile());
 		}
 		
-		request.setAttribute("mainUrl", "include/alert.jsp");
-		request.setAttribute("returnToList", "NoticeList");
-		request.setAttribute("message", "삭제되었습니다.");
+		request.setAttribute("mainUrl", "inc/alert.jsp");
+		request.setAttribute("goUrl", "NoticeList");
+		request.setAttribute("msg", "삭제되었습니다.");
 	}
 }

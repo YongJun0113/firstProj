@@ -25,9 +25,9 @@ public class NoticeEditHandler implements NoticeService{
 			
 			new NoticeDAO().editPost(dto);
 			
-			request.setAttribute("mainUrl", "include/alert.jsp");
-			request.setAttribute("message", "수정되었습니다.");
-			request.setAttribute("returnToList", "NoticeList");
+			request.setAttribute("mainUrl", "inc/alert.jsp");
+			request.setAttribute("msg", "수정되었습니다.");
+			request.setAttribute("goUrl", "NoticeList");
 			
 			System.out.println("NoticeEditHandler 수정 결과 실행");
 		} catch (Exception e) {

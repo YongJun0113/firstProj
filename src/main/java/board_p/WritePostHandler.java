@@ -59,13 +59,13 @@ public class WritePostHandler implements BoardService{
 			
 			if (!request.getParameter("writeTitle").trim().isEmpty() && !request.getParameter("writeContent").trim().isEmpty()) {
 			    new BoardDAO().writePost(dto);
-			    request.setAttribute("message", "등록되었습니다.");
-				request.setAttribute("mainUrl", "include/alert.jsp");
-				request.setAttribute("returnToList", "BoardList");
+			    request.setAttribute("msg", "등록되었습니다.");
+				request.setAttribute("mainUrl", "inc/alert.jsp");
+				request.setAttribute("goUrl", "BoardList");
 			}else{
-				request.setAttribute("mainUrl", "include/alert.jsp");
-			    request.setAttribute("message", "작성하지 않은 필수 항목이 있습니다.");
-				request.setAttribute("returnToList", "WritePost");
+				request.setAttribute("mainUrl", "inc/alert.jsp");
+			    request.setAttribute("msg", "작성하지 않은 필수 항목이 있습니다.");
+				request.setAttribute("goUrl", "WritePost");
 			}
 
 		} catch (Exception e) {
