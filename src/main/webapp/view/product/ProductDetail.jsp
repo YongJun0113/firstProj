@@ -109,7 +109,7 @@
 			<hr/>
 			<div>
 				<div>식품의 유형</div>
-				<div>커피</div>
+				<div>원두 커피</div>
 			</div>
 			<div>
 				<div>배송비</div>

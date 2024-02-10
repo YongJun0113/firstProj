@@ -3,9 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <style>
-	.wrapper{
-		width:800px;
-	}
+	
 	
 	.big{
 		display:flex;
@@ -44,6 +42,14 @@
 			location.href="ProductDetail?prodNum=" + prodNum;
 			
 		})
+		
+		$(".button").click(function(){
+			/* alert("눌림")  */
+			
+			location.href="ProductWrite"
+			
+		})
+		
 	})
 
 
@@ -56,7 +62,14 @@
 <div class="wrapper">
 	<div class="cate">카테고리</div>
 	
+	<div>
+	 <c:if test="${param.admin != 'true' }">
+            <div>
+                <input type="button" class="button" value="글쓰기"/>
+            </div>
+        </c:if>
 	
+	</div>
 	<c:forEach begin="1" end="4">
 		<div class="big">
 			<c:forEach items="${mainData}" var="dto" varStatus="no">
