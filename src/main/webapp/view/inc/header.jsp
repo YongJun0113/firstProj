@@ -18,7 +18,9 @@
 	</ul>
 	<div id="void"><a href="/firstProj/admin/Admin">관리자</a></div>
 	<div id="void"><a href="/firstProj/product/ProductList">ㅇㅇㅇ</a></div>
-	<div id="void"><a href="/firstProj/board/BoardList">게시판</a></div>
+	<div id="void"><a href="/firstProj/noitce/NoticeList">공지사항</a>
+	<div id="void"><a href="/firstProj/board/BoardList">1:1문의</a></div>
+	</div>
 	<div id="void"><a href="/firstProj/myPage/MyPageMain">aa</a></div>
 </div>
 <div id="category">

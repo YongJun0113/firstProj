@@ -1,28 +1,28 @@
 package controller_p;
 
-import jakarta.servlet.RequestDispatcher;	
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service_p.BoardService;
+import service_p.NoticeService;
 
 import java.io.IOException;
 
 /**
  * Servlet implementation class BoardController
  */
-@WebServlet("/board/*")
+@WebServlet("/notice/*")
 @MultipartConfig()
-public class BoardController extends HttpServlet {
+public class NoticeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardController() {
+    public NoticeController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,24 +32,21 @@ public class BoardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String cate = "board/";
+		String cate = "notice/";
 		String service = request.getRequestURI().substring((request.getContextPath()+"/"+cate).length());
 		
 		request.setAttribute("mainUrl", cate+service+".jsp");
 	
-		BoardService boardservice;
+		NoticeService noticeservice;
 		try {
-			boardservice = (BoardService)Class.forName("controller_p."+service).newInstance();
-			boardservice.execute(request, response);
+			noticeservice = (NoticeService)Class.forName("controller_p."+service).newInstance();
+			noticeservice.execute(request, response);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/template.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}//반환되는 객체가 Object이기 때문에 형변환
-		
-		
-		//클라이언트에게 응답을 보내는 코드
+		}
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 

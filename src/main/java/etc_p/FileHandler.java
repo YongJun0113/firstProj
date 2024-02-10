@@ -1,6 +1,6 @@
 package etc_p;
 
-import java.io.File;
+import java.io.File;	
 import java.io.IOException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +11,9 @@ public class FileHandler {
 	
 	public FileHandler(HttpServletRequest request) {
 		directory = request.getServletContext().getRealPath("saveFile/");
-		directory = "/firstProjMe/src/main/webapp/saveFile";//추후 수정 필요
+		directory = "C:\\kimhyejung\\study\\javaWork\\firstProjMe\\src\\main\\webapp\\saveFile";//추후 수정 필요
+		System.out.println(directory);
+		
 	}	
 	
 	public String uploadFile(Part file) throws IOException {
@@ -36,10 +38,10 @@ public class FileHandler {
 			
 			return fileName;
 		}
-	return null;
+		return null;
 	}
 	
-	public void DeleteFile(String fileName) {
+	public void deleteFile(String fileName) {
 		new File(directory+fileName).delete();
 	}
 }

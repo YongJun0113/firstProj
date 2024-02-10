@@ -40,7 +40,7 @@
 <script>
 	function cancel(){
 		alert("취소되었습니다.")
-		location.href="BoardList"
+		location.href="NoticeList"
 	}
 	function deleteFile(){
 		if(confirm("파일을 삭제하시겠습니까? \n삭제된 파일은 복구할 수 없습니다.")){
@@ -53,27 +53,21 @@
 </script>
 
 <h2>게시판 수정하기</h2>
-<form name="forms" action="BoardEditHandler" method="post" enctype="multipart/form-data">
+<form name="forms" action="NoticeEditHandler" method="post" enctype="multipart/form-data">
 	<div class="divContainer">
-	<div class="divHidden"><input type="text" name="perNum" value="${dto.perNum }" readonly="readonly"/></div>
-		<select name="boardCate" value="${dto.boardCate}">
-			<option value="상품">상품</option>
-		  	<option value="주문/결제">주문/결제</option>
-		  	<option value="취소/교환/환불">취소/교환/환불</option>
-		  	<option value="기타">기타</option>
-		 </select>
-		<div class="inputText"><input type="text" name="perTitle" value="${dto.perTitle}"/></div>
-		<div><textarea cols="30" rows="10" name="perContent">${dto.perContent}</textarea></div>
+	<div class="divHidden"><input type="text" name="noticeNum" value="${dto.noticeNum }" readonly="readonly"/></div>
+		<div class="inputText"><input type="text" name="noticeTitle" value="${dto.noticeTitle}"/></div>
+		<div><textarea cols="30" rows="10" name="noticeContent">${dto.noticeContent}</textarea></div>
 		<table border="" class = "table-cell">
 			<td>첨부파일</td>
 			<td>
 			<c:choose>
-				<c:when test="${dto.perFile!=null}">
-					<input type="text" name="perFile" value="${dto.perFile }" readonly="readonly"/>
+				<c:when test="${dto.noticeFile!=null}">
+					<input type="text" name="noticeFile" value="${dto.noticeFile }" readonly="readonly"/>
 					<input type="button" onclick="deleteFile()" value="파일삭제" />
 				</c:when>
 				<c:otherwise>
-					<input type="file" name = "perFile"/>
+					<input type="file" name = "noticeFile"/>
 				</c:otherwise>
 			</c:choose>
 			</td>

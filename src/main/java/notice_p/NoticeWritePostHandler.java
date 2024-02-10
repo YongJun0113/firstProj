@@ -1,18 +1,18 @@
-package board_p;
+package notice_p;
 
 import jakarta.servlet.http.HttpServletRequest;		
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-import service_p.BoardService;
-import dao_p.BoardDAO;
-import dto_p.BoardDTO;
+import service_p.NoticeService;
+import dao_p.NoticeDAO;
+import dto_p.NoticeDTO;
 
 import java.io.File;
 import java.io.IOException;
 
 import etc_p.FileHandler;
 
-public class WritePostHandler implements BoardService{
+public class NoticeWritePostHandler implements NoticeService{
 	
 	/*
 	 * String uploadFile(Part file, HttpServletRequest request) throws IOException {
@@ -49,23 +49,22 @@ public class WritePostHandler implements BoardService{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {	
-			String upLoadFile = new FileHandler(request).uploadFile(request.getPart("perFile"));
+			String upLoadFile = new FileHandler(request).uploadFile(request.getPart("noticeFile"));
 			
-			BoardDTO dto = new BoardDTO();
-			dto.setBoardCate(request.getParameter("boardCate"));
-			dto.setPerTitle(request.getParameter("writeTitle"));
-			dto.setPerContent(request.getParameter("writeContent"));
-			dto.setPerFile(upLoadFile);
+			NoticeDTO dto = new NoticeDTO();
+			dto.setnoticeTitle(request.getParameter("writeTitle"));
+			dto.setnoticeContent(request.getParameter("writeContent"));
+			dto.setnoticeFile(upLoadFile);
 			
 			if (!request.getParameter("writeTitle").trim().isEmpty() && !request.getParameter("writeContent").trim().isEmpty()) {
-			    new BoardDAO().writePost(dto);
+			    new NoticeDAO().writePost(dto);
 			    request.setAttribute("message", "등록되었습니다.");
 				request.setAttribute("mainUrl", "include/alert.jsp");
-				request.setAttribute("returnToList", "BoardList");
+				request.setAttribute("returnToList", "NoticeList");
 			}else{
 				request.setAttribute("mainUrl", "include/alert.jsp");
 			    request.setAttribute("message", "작성하지 않은 필수 항목이 있습니다.");
-				request.setAttribute("returnToList", "WritePost");
+				request.setAttribute("returnToList", "NoticeWritePost");
 			}
 
 		} catch (Exception e) {
