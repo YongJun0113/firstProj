@@ -54,7 +54,7 @@
 			<c:forEach items="${NoticeDataList}" var = "dtoList" varStatus="row">
 			<tr>
 				<td>${row.index+1}</td>
-				<td><a href="PostDetails?noticeNum=${dtoList.noticeNum}">${dtoList.noticeTitle}</a></td>
+				<td><a href="NoticeDetails?noticeNum=${dtoList.noticeNum}">${dtoList.noticeTitle}</a></td>
 				<td>${dtoList.userId}</td>
 				<td>${dtoList.noticeDate}</td>
 			</tr>
@@ -64,7 +64,7 @@
 			<c:forEach items="${searchResult}" var = "dtoList" varStatus="row">
 		<tr>
 			<td>${row.index+1}</td>
-			<td><a href="PostDetails?noticeNum=${dtoList.noticeNum}">${dtoList.noticeTitle}</a></td>
+			<td><a href="NoticeDetails?noticeNum=${dtoList.noticeNum}">${dtoList.noticeTitle}</a></td>
 			<td>${dtoList.userId}</td>
 			<td>${dtoList.noticeDate}</td>
 		</tr>

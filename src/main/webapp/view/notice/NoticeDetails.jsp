@@ -45,11 +45,11 @@ function edit(){
 		<td>${dto.userId}</td>
 		<td class="title-cell">작성일</td>
 		<td>${dto.noticeDate}</td>
-		<c:if test="${dto.noticeFile!=null}">
 	</tr>
 	<tr>
 		<td colspan = "6">${dto.noticeContent}</td>
 	</tr>
+	<c:if test="${dto.noticeFile!=null}">
 	<tr>
 		<td class="title-cell">첨부파일</td>
 		<td>

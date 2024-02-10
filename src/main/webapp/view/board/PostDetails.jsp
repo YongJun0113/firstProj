@@ -45,13 +45,14 @@ function edit(){
 		<td>${dto.userId}</td>
 		<td class="title-cell">작성일</td>
 		<td>${dto.perDate}</td>
-		<c:if test="${dto.perFile!=null}">
+		
 		<td class="title-cell">답변여부</td>
 		<td>${dto.perAnswer}</td>
 	</tr>
 	<tr>
 		<td colspan = "6">${dto.perContent}</td>
 	</tr>
+	<c:if test="${dto.perFile!=null}">
 	<tr>
 		<td class="title-cell">첨부파일</td>
 		<td>
