@@ -11,23 +11,29 @@
 <h1>매출</h1>
 <table border="">
 	<tr>
-		<td width="250px">주문일자</td>
-		<td width="700px">상품정보</td>
+		<td width="150px">주문일자</td>
+		<td width="100px">주문번호</td>
+		<td width="550px">상품정보</td>
 		<td width="100px">수량</td>
 		<td width="150px">금액</td>
+		<td width="150px">총액</td>
 	</tr>
-	<%-- <c:forEach items="" var="dto" varStatus="no"> --%>
+	<c:forEach items="${mainData}" var="dto" varStatus="no">
 	<tr>
-		<td>2024-01-01</td>
-		<td>콜롬비아 수프리모 옵션1:200g 옵션2:원두상태</td>
-		<td>3</td>
-		<td>24000</td>
+		<td>${dto.orderDate }</td>
+		<td>${dto.orderNum }</td>
+		<td>${dto.prodTitle }
+		${dto.prodCate }
+		${dto.option1 }
+		${dto.option2 }</td>
+		<td>${dto.orderCnt }</td>
+		<td>${dto.prodPrice }</td>
+		<td>${dto.tot }</td>
 	</tr>
-	<%-- </c:forEach> --%>
+	</c:forEach>
 	<tr>
-		<td colspan="2" align="left">통계</td>
-		<td>3</td>
-		<td>24000</td>
+		<td colspan="5" align="left">통계</td>
+		<td>${tData}</td>
 	</tr>
 </table>
 
