@@ -93,6 +93,25 @@ public class ProductDAO {
 		return dto;
 	}
 	
+	public void write(ProductDTO dto){
+		sql = "insert into product (prodPrice, prodCate, prodFile, prodTitle, ProdInfo) values (?,?,?,?,?)";
+		try {
+			psmt = con.prepareStatement(sql);
 	
+	
+			psmt.setInt(1,dto.getProdPrice());
+			psmt.setString(2,dto.getProdCate());
+			psmt.setString(3,dto.getProdFile());
+			psmt.setString(4,dto.getProdTitle());
+			psmt.setString(5,dto.getProdInfo());
+	
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+	}
 	
 }
