@@ -39,7 +39,7 @@ public class BoardController extends HttpServlet {
 	
 		BoardService boardservice;
 		try {
-			boardservice = (BoardService)Class.forName("controller_p."+service).newInstance();
+			boardservice = (BoardService)Class.forName("board_p."+service).newInstance();
 			boardservice.execute(request, response);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/template.jsp");
 			dispatcher.forward(request, response);

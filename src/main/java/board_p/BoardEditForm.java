@@ -12,7 +12,6 @@ public class BoardEditForm implements BoardService{
 		int perNum = Integer.parseInt(request.getParameter("perNum"));
 		BoardDTO dto = new BoardDAO().getPostDetails(perNum);
 		request.setAttribute("dto", dto);
-		System.out.println("수정 실행"+perNum);
 		
 		
 		

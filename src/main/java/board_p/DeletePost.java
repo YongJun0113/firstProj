@@ -19,8 +19,8 @@ public class DeletePost implements BoardService{
 			new etc_p.FileHandler(request).deleteFile(dto.getPerFile());
 		}
 		
-		request.setAttribute("mainUrl", "include/alert.jsp");
-		request.setAttribute("returnToList", "BoardList");
-		request.setAttribute("message", "삭제되었습니다.");
+		request.setAttribute("mainUrl", "inc/alert.jsp");
+		request.setAttribute("goUrl", "BoardList");
+		request.setAttribute("msg", "삭제되었습니다.");
 	}
 }
