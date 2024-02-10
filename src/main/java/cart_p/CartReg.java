@@ -43,11 +43,11 @@ public class CartReg implements CartService{
 			//int no = new ProductDAO().newNo();
 			if(request.getParameter("chk").equals("true")) {
 				request.setAttribute("mainUrl", "inc/alert.jsp");
-				request.setAttribute("msg", request.getParameter("chk"));
+				request.setAttribute("msg", "장바구니로 이동합니다.");
 				request.setAttribute("goUrl", "Cart");
 			}else if(request.getParameter("chk").equals("false")) {
 				request.setAttribute("mainUrl", "inc/alert.jsp");
-				request.setAttribute("msg", request.getParameter("chk"));
+				request.setAttribute("msg", "장바구니에 저장되었습니다.");
 				request.setAttribute("goUrl", "/firstProj/product/ProductDetail?prodNum="+request.getParameter("prodNum"));
 				
 			}
