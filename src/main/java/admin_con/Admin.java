@@ -8,14 +8,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-public class admin implements AdminService {
+public class Admin implements AdminService {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		ArrayList<AdminDTO> data = new AdminDAO().list();
+		int tData = new AdminDAO().total();
 		request.setAttribute("mainData", data);
-//		pData.totalCalc(new BoardDAO().total());
+		request.setAttribute("tData", tData);
 		
 		System.out.println("admin.excute() 실행");
 	}
