@@ -13,6 +13,10 @@ import javax.sql.DataSource;
 import dto_p.ProfileDTO;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/YongJun0113/firstProj.git
 public class ProfileDAO {
 	Connection con;
 	PreparedStatement psmt;
