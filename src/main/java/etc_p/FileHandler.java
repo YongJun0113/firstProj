@@ -11,7 +11,7 @@ public class FileHandler {
 	
 	public FileHandler(HttpServletRequest request) {
 		directory = request.getServletContext().getRealPath("saveFile/");
-		directory = "C:\\kimhyejung\\study\\javaWork\\firstProjMe\\src\\main\\webapp\\saveFile";//추후 수정 필요
+		directory = "/firstProj/src/main/webapp/saveFile";
 		System.out.println(directory);
 		
 	}	
