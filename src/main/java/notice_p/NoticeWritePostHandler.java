@@ -28,8 +28,8 @@ public class NoticeWritePostHandler implements NoticeService{
 			int cnt=1;
 			
 			
-			String dir = request.getServletContext().getRealPath("saveFile/");
-			dir = "/firstProj/src/main/webapp/saveFile";
+			String dir = request.getServletContext().getRealPath("fff/");
+			dir = "C:\\kimhyejung\\study\\javaWork\\firstProjMe\\src\\main\\webapp\\saveFile\\";
 			
 			File nowFile = new File(dir+fileName);
 				while(nowFile.exists()) {//같은 이름의 파일이 이미 있을 경우

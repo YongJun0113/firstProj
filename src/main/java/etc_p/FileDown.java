@@ -31,7 +31,7 @@ public class FileDown extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String directory = request.getServletContext().getRealPath("saveFile/");
-		directory = "/firstProj/src/main/webapp/saveFile";
+		directory = "C:\\kimhyejung\\study\\javaWork\\firstProjMe\\src\\main\\webapp\\saveFile";//추후 수정 필요
 		
 		String fileName = request.getParameter("fileName");
 		response.setHeader("Content-Disposition", "attachment;filename="+URLEncoder.encode(fileName,"utf-8"));

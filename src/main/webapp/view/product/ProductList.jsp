@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <style>
 	
-	
 	.big{
 		display:flex;
 		width:100%;
@@ -72,16 +71,18 @@
 	</div>
 	<c:forEach begin="1" end="4">
 		<div class="big">
-			<c:forEach items="${mainData}" var="dto" varStatus="no">
+			<c:forEach items="${mainData}" var="dto" varStatus="no" begin="0" end="4">
 				<div class="box" data-prodnum="${dto.prodNum}">
 					<div class="img"><img src="${dto.prodFile }">
 					</div>
 					<div>${dto.prodTitle }</div>
 					<div>${dto.prodPrice }</div>
 				</div>
+				
 			</c:forEach>
 		</div>
 	</c:forEach>
 </div>
+
 </body>
 </html>
