@@ -38,7 +38,7 @@
 				<div class="formwrap">
 					<form method="post" action="loginReg.jsp">
 						<div class="inputboxid">
-							<input type="text" name="userid" style="width:380px; height:50px;">
+							<input type="text" name="userId" style="width:380px; height:50px;">
 						</div>
 						<div class="orderno"></div>
 						<div class="inputboxpw">

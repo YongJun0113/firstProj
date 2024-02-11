@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div id="header"><a href="/firstProj/member/memberForm">회원가입</a>|<a href="">로그인</a>|<a href="">고객센터</a></div>
+<div id="header"><a href="/firstProj/member/memberForm">회원가입</a>|<a href="/firstProj/member/Loginmain">로그인</a>|<a href="">고객센터</a></div>
 <div id="logo">
 	<div id="void"><a href="/firstProj/main/Main"><img src="<c:url value="/view/inc/img/main_logo.png"/>" alt=""></a></div>
 	<ul id="logo_list">
@@ -17,7 +17,7 @@
 		<li id="li_logo"><input type="text" /><input type="button" value="검색"/></li>
 	</ul>
 	<div id="void"><a href="/firstProj/admin/Admin">관리자</a></div>
-	<div id="void"><a href="/firstProj/product/ProductList">ㅇㅇㅇ</a></div>
+	<div id="void"><a href="/firstProj/product/ProductList">상품</a></div>
 	<div id="void"><a href="/firstProj/notice/NoticeList">공지사항</a>
 	<div id="void"><a href="/firstProj/board/BoardList">1:1문의</a></div>
 	</div>
