@@ -36,6 +36,7 @@
     	padding: 10px; 
 	}
 </style>
+<h2>공지사항</h2>
 <form action="NoticeList" method="post">
     <div class="searchContainer">
         <input type="text" placeholder = "제목을 검색하세요." name="search"/>

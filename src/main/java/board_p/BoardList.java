@@ -17,25 +17,20 @@ public class BoardList implements BoardService {
 		System.out.println("BoardList execute() 실행");
 		String cate = request.getParameter("searchCate");
 		String search = request.getParameter("search");
+		ListPager page = new ListPager(request);
 		
 		if(search!=null) {
-			ListPager page = new ListPager(request);
 			ArrayList<BoardDTO> searchResult = new BoardDAO().serachList(cate, search);
-			
-			System.out.println(searchResult);
 			request.setAttribute("searchResult", searchResult);
 			request.getAttribute("searchResult");
 			
 			if(!cate.equals("")&&search.equals("")) {
 				request.setAttribute("mainUrl", "include/alert.jsp");
-				request.setAttribute("message", "검색어를 입력해주세요.");
-				request.setAttribute("returnToList", "BoardList");
+				request.setAttribute("msg", "검색어를 입력해주세요.");
+				request.setAttribute("goUrl", "BoardList");
 			}
 		} else {
-			ListPager page = new ListPager(request);
-			
 			ArrayList<BoardDTO> boardDataList = new BoardDAO().list(page);
-			
 			request.setAttribute("page", page);
 			request.setAttribute("boardDataList", boardDataList);
 		}

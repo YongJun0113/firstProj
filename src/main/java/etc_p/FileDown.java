@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 /**
  * Servlet implementation class FileDown
  */
-@WebServlet("/FileDown")
+@WebServlet("/FileDown")//파일 다운로드 서블릿
 public class FileDown extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,25 +31,25 @@ public class FileDown extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String directory = request.getServletContext().getRealPath("saveFile/");
-		directory = "/firstProj/src/main/webapp/saveFile";
+		directory = "C:\\kimhyejung\\study\\javaWork\\first-Proj-Team\\firstProj\\src\\main\\webapp\\saveFile\\";//추후 수정 필요(개인마다 경로가 다름)
 		
-		String fileName = request.getParameter("fileName");
-		response.setHeader("Content-Disposition", "attachment;filename="+URLEncoder.encode(fileName,"utf-8"));
+		String fName = request.getParameter("fName");
+		response.setHeader("Content-Disposition", "attachment;filename="+URLEncoder.encode(fName,"utf-8"));
 		
 		ServletOutputStream out = response.getOutputStream();
-		FileInputStream in = new FileInputStream(directory+fileName);
+		FileInputStream in = new FileInputStream(directory+fName);
 		
-		byte [] buffer = new byte[1024];
+		byte [] buf = new byte[1024];
 		//int len = in.read(buffer);
 		/*
 		 * while(len!=-1) { out.write(buffer, 0, len); }
 		 */
 		while(in.available()>0) {
-			int len = in.read(buffer);
-			out.write(buffer, 0, len);
+			int len = in.read(buf);
+			out.write(buf, 0, len);
 		}
-		out.close();
 		in.close();
+		out.close();
 	}
 
 	/**

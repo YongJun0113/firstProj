@@ -21,7 +21,7 @@ public class BoardEditHandler implements BoardService{
 			dto.setPerTitle(request.getParameter("perTitle"));
 			dto.setUserId(request.getParameter("userId"));
 			dto.setPerContent(request.getParameter("perContent"));
-			dto.setPerFile(request.getParameter("perFile"));
+			dto.setPerFile(upLoadFile);
 			
 			new BoardDAO().editPost(dto);
 			

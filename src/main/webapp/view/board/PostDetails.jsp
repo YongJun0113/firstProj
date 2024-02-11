@@ -56,7 +56,7 @@ function edit(){
 	<tr>
 		<td class="title-cell">첨부파일</td>
 		<td>
-		<a href="<c:url value="/FileDown?fileName=${dto.perFile}"/>">${dto.perFile}</a>
+		<a href="<c:url value="/FileDown?fName=${dto.perFile}"/>">${dto.perFile}</a>
 		</td>
 	</c:if>
 	</tr>

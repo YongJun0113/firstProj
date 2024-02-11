@@ -84,13 +84,11 @@
 	</c:choose>
 	<tr>
 		<td colspan="6" align="center">
-		<div id="aa"> </div>
-		<c:forEach var="i" begin="1" end="5">
-		
+		<c:forEach var="i" begin="1" end="15">
 			<c:choose>
 				<c:when test="${page.nowPage==i}">
 					<div class="pageNext">${i }</div>
-					<input id="in" style="display: none" value="${i }"/>
+					<%-- <input id="in" style="display: none" value="${i }"/> --%>
 				</c:when>
 				<c:otherwise>
 					<a href="BoardList?nowPage=${i }" style="text-decoration: none;" onclick="inClick()"> ${i }</a>

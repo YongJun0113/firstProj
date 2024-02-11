@@ -37,9 +37,8 @@ public class BoardController extends HttpServlet {
 		
 		request.setAttribute("mainUrl", cate+service+".jsp");
 	
-		BoardService boardservice;
 		try {
-			boardservice = (BoardService)Class.forName("board_p."+service).newInstance();
+			BoardService boardservice = (BoardService)Class.forName("board_p."+service).newInstance();
 			boardservice.execute(request, response);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/view/template.jsp");
 			dispatcher.forward(request, response);
@@ -48,9 +47,6 @@ public class BoardController extends HttpServlet {
 			e.printStackTrace();
 		}//반환되는 객체가 Object이기 때문에 형변환
 		
-		
-		//클라이언트에게 응답을 보내는 코드
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

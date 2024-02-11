@@ -11,7 +11,8 @@ public class FileHandler {
 	
 	public FileHandler(HttpServletRequest request) {
 		directory = request.getServletContext().getRealPath("saveFile/");
-		directory = "/firstProj/src/main/webapp/saveFile";
+//		directory = "/firstProj/src/main/webapp/saveFile/";
+		directory = "C:\\kimhyejung\\study\\javaWork\\first-Proj-Team\\firstProj\\src\\main\\webapp\\saveFile\\";
 		System.out.println(directory);
 		
 	}	
@@ -21,27 +22,27 @@ public class FileHandler {
 		//getSubmittedFileName : 업로드한 파일의 원래 이름
 		if(!file.getSubmittedFileName().equals("")) {
 
-			String fileName = file.getSubmittedFileName();
-			int dot = fileName.lastIndexOf(".");
-			String domain = fileName.substring(0, dot);
-			String ext = fileName.substring(dot);
+			String fName = file.getSubmittedFileName();
+			int dot = fName.lastIndexOf(".");
+			String domain = fName.substring(0, dot);
+			String ext = fName.substring(dot);
 			
-			File userFile = new File(directory+fileName);
+			File userFile = new File(directory+fName);
 			
 			while(userFile.exists()) {
-				fileName = domain+"("+cnt+")"+ext;
-				userFile = new File(directory+fileName);
+				fName = domain+"("+cnt+")"+ext;
+				userFile = new File(directory+fName);
 				cnt++;
 			}
-			file.write(directory+fileName);
+			file.write(directory+fName);
 			file.delete();
 			
-			return fileName;
+			return fName;
 		}
 		return null;
 	}
 	
-	public void deleteFile(String fileName) {
-		new File(directory+fileName).delete();
+	public void deleteFile(String fName) {
+		new File(directory+fName).delete();
 	}
 }
