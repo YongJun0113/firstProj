@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 import org.apache.catalina.tribes.Member;
 
-import member_p.MemberDTO;
+import dto_p.MemberDTO;
 
 
 public class MemberDAO {
@@ -71,6 +71,8 @@ public class MemberDAO {
 		return dto; //db오류
 	}
 	*/
+	
+	/*
 	public MemberDTO selectMem(String userid) {
 		con=null;
 		psmt=null;
@@ -99,6 +101,6 @@ public class MemberDAO {
 		}
 		return dto; //db오류
 	}
-	
+	*/
 	
 }

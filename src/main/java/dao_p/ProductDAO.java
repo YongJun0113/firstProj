@@ -50,8 +50,7 @@ public class ProductDAO {
 				dto.setProdFile(rs.getString("prodFile"));
 				dto.setProdPrice(rs.getInt("prodPrice"));
 				dto.setProdInfo(rs.getString("prodInfo"));
-				dto.setOption1(rs.getString("option1"));
-				dto.setOption2(rs.getString("option2"));
+	
 
 				res.add(dto);
 			}
@@ -82,8 +81,7 @@ public class ProductDAO {
 				dto.setProdFile(rs.getString("prodFile"));
 				dto.setProdPrice(rs.getInt("prodPrice"));
 				dto.setProdInfo(rs.getString("prodInfo"));
-				dto.setOption1(rs.getString("option1"));
-				dto.setOption2(rs.getString("option2"));
+	
 			}
 			
 		} catch (SQLException e) {
@@ -95,6 +93,25 @@ public class ProductDAO {
 		return dto;
 	}
 	
+	public void write(ProductDTO dto){
+		sql = "insert into product (prodPrice, prodCate, prodFile, prodTitle, ProdInfo) values (?,?,?,?,?)";
+		try {
+			psmt = con.prepareStatement(sql);
 	
+	
+			psmt.setInt(1,dto.getProdPrice());
+			psmt.setString(2,dto.getProdCate());
+			psmt.setString(3,dto.getProdFile());
+			psmt.setString(4,dto.getProdTitle());
+			psmt.setString(5,dto.getProdInfo());
+	
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+	}
 	
 }

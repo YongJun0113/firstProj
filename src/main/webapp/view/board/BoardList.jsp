@@ -1,4 +1,4 @@
-
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -28,17 +28,23 @@
         margin: 30px auto;
         align-items: center;
 	}
-</style>
-<script>
-	function button() {
-		location.href = "WritePost";
+	.pageNext{
+		display:inline-block;
+		color: white;
+		background-color: #147814;
+		width: 20px;
+    	padding: 10px; 
 	}
-</script>
+</style>
 <h2>1:1 문의</h2>
-<form action="SearchResultHandler" method="get">
+<form action="BoardList" method="post">
     <div class="searchContainer">
-        <input type="text" placeholder = "제목을 검색하세요." name="title"/>
-        <input type= "submit" value="찾기">
+    	<select name = "searchCate">
+  			<option>카테고리</option>
+		  	<option>제목</option>
+    	</select>
+        <input type="text" placeholder = "검색어를 입력해주세요." name="search"/>
+        <input type="submit" value="찾기">
     </div>
 </form>
 <table border="" class="listTable">
@@ -50,18 +56,75 @@
 		<td>작성일</td>
 		<td>답변</td>
 	</tr>
-	<c:forEach items="${boardDataList}" var = "dtoList" varStatus="row">
+	<c:choose>
+		<c:when test="${boardDataList != null}">
+			<c:forEach items="${boardDataList}" var = "dtoList" varStatus="row">
+			<tr>
+				<td>${row.index+1}</td>
+				<td>${dtoList.boardCate}</td>
+				<td><a href="PostDetails?perNum=${dtoList.perNum}">${dtoList.perTitle}</a></td>
+				<td>${dtoList.userId}</td>
+				<td>${dtoList.perDate}</td>
+				<td>${dtoList.perAnswer}</td>
+			</tr>
+			</c:forEach>
+		</c:when>
+		 <c:otherwise>
+			<c:forEach items="${searchResult}" var = "dtoList" varStatus="row">
+		<tr>
+			<td>${row.index+1}</td>
+			<td>${dtoList.boardCate}</td>
+			<td><a href="PostDetails?perNum=${dtoList.perNum}">${dtoList.perTitle}</a></td>
+			<td>${dtoList.userId}</td>
+			<td>${dtoList.perDate}</td>
+			<td>${dtoList.perAnswer}</td>
+		</tr>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
 	<tr>
-		<td>${row.index+1}</td>
-		<td>${dtoList.boardCate}</td>
-		<td><a href="PostDetails?perNum=${dtoList.perNum}">${dtoList.perTitle}</a></td>
-		<td>${dtoList.userId}</td>
-		<td>${dtoList.perDate}</td>
-		<td>${dtoList.perAnswer}</td>
+		<td colspan="6" align="center">
+		<div id="aa"> </div>
+		<c:forEach var="i" begin="1" end="5">
+		
+			<c:choose>
+				<c:when test="${page.nowPage==i}">
+					<div class="pageNext">${i }</div>
+					<input id="in" style="display: none" value="${i }"/>
+				</c:when>
+				<c:otherwise>
+					<a href="BoardList?nowPage=${i }" style="text-decoration: none;" onclick="inClick()"> ${i }</a>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		</td>
 	</tr>
-	</c:forEach>
 	<tr>
 		<td colspan="6" align="right">
 		<button onclick="button()" class="writeButton">글쓰기</button>
 	</tr>
 </table>
+<script>
+	function button() {
+		location.href = "WritePost";
+	}
+/* 	paging();
+	   function paging(e) {
+		   
+		   //if(e.this.value() != null || e.this.value() != undefined) alert(e.this.value());
+		  var html = "";
+	      html = "<a id='startBtn' onClick='paging()'> < </a>"
+	      for(var i = 1; i <= 5; i++) {
+	         html += "<a href='BoardList?nowPage=" + (i) + "' style='text-decoration: none; id='" + (i) + "'>" + ( i ) + "</a>";
+	    	  //html += "<a href='BoardList?nowPage=1 style='text-decoration: none; id='1'>1</a>";
+				
+	      }
+	      html += "<a id='endBtn' onClick='paging()'> > </a>"
+	      var tt = document.getElementById("aa");
+	      
+	      tt.innerHTML = html;
+	      
+	      alert(tt.innerHTML);
+	      //.innerHTML = html;
+	   } */
+</script>

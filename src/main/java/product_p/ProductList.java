@@ -14,7 +14,7 @@ public class ProductList implements ProductService {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("왓냐");
+		System.out.println("상품페이지");
 		ArrayList<ProductDTO> data = new ProductDAO().list();
 		request.setAttribute("mainData", data);
 		

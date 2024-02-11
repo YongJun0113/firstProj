@@ -23,7 +23,7 @@ public class CartDAO {
 	public CartDAO() {
 		try {
 			Context init = new InitialContext();
-			DataSource ds = (DataSource)init.lookup("java:comp/env/first");
+			DataSource ds = (DataSource)init.lookup("java:comp/env/zaq");
 			con = ds.getConnection();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -46,6 +46,7 @@ public class CartDAO {
 			while(rs.next()) {
 
 				CartDTO dto = new CartDTO();
+				dto.setNo(rs.getInt("no"));
 				dto.setCartFile(rs.getString("cartFile"));
 				dto.setCartTitle(rs.getString("cartTitle"));
 				dto.setProdPrice(rs.getInt("prodPrice"));
@@ -70,7 +71,7 @@ public class CartDAO {
 	
 	public  void cartAdd(CartDTO dto){
 		
-		sql = "insert into cart (prodPrice, prodCnt,option1,option2,userId,prodNum, cartFile, cartTitle) values (?,?,?,?,?,?,?,?)";
+		sql = "insert into cart (prodPrice, prodCnt,option1,option2,userId,prodNum, cartFile, cartTitle, no) values (?,?,?,?,?,?,?,?,?)";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setInt(1, dto.getProdPrice());
@@ -81,7 +82,7 @@ public class CartDAO {
 			psmt.setInt(6, dto.getProdNum());
 			psmt.setString(7, dto.getCartFile());
 			psmt.setString(8, dto.getCartTitle());
-			
+			psmt.setInt(9, dto.getNo());
 		
 			psmt.executeUpdate();
 		} catch (SQLException e) {
@@ -90,6 +91,26 @@ public class CartDAO {
 		}finally {
 			close();
 		}
+		
 	}
+	
+	public  void delete(int no){
+		
+		sql = "delete from cart where no = ? ";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setInt(1, no);
+		
+			
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	}
+	
+	
 	
 }

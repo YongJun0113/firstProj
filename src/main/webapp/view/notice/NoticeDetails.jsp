@@ -25,38 +25,35 @@
 </style>
 <script>
 function edit(){
-		location.href="BoardEditForm?perNum=${dto.perNum}"
+		location.href="NoticeEditForm?noticeNum=${dto.noticeNum}"
 	}
-	function deletePost(){//delete는 javascript의 예약어
+	function deletePost(){
 		if(confirm("게시물을 삭제하면 복구할 수 없습니다. 정말로 삭제하시겠습니까?")){
-			location.href="DeletePost?perNum=${dto.perNum}"
+			location.href="NoticeDelete?noticeNum=${dto.noticeNum}"
 		}
 	}
 	function list(){
-		location.href="BoardList"
+		location.href="NoticeList"
 	}
 </script>
 <table class="border-cell" border="">
 	<tr>
-		<td colspan = "6">${dto.perTitle}</td>
+		<td colspan = "6">${dto.noticeTitle}</td>
 	</tr>
 	<tr class="border-cell">
 		<td class="title-cell">작성자</td>
 		<td>${dto.userId}</td>
 		<td class="title-cell">작성일</td>
-		<td>${dto.perDate}</td>
-		
-		<td class="title-cell">답변여부</td>
-		<td>${dto.perAnswer}</td>
+		<td>${dto.noticeDate}</td>
 	</tr>
 	<tr>
-		<td colspan = "6">${dto.perContent}</td>
+		<td colspan = "6">${dto.noticeContent}</td>
 	</tr>
-	<c:if test="${dto.perFile!=null}">
+	<c:if test="${dto.noticeFile!=null}">
 	<tr>
 		<td class="title-cell">첨부파일</td>
 		<td>
-		<a href="<c:url value="/FileDown?fileName=${dto.perFile}"/>">${dto.perFile}</a>
+		<a href="<c:url value="/FileDown?fileName=${dto.noticeFile}"/>">${dto.noticeFile}</a>
 		</td>
 	</c:if>
 	</tr>

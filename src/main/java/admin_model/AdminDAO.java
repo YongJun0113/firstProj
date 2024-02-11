@@ -55,15 +55,35 @@ public class AdminDAO {
 	public ArrayList<AdminDTO> list(){
 		ArrayList<AdminDTO> res = new ArrayList<AdminDTO>();
 		
-		sql = "select * from order";
+		sql = "SELECT "
+				+ "c.orderDate AS orderDate,"
+				+ "a.orderNum  AS orderNum,"
+				+ "b.prodTitle AS prodTitle,"
+				+ "b.prodCate  AS prodCate,"
+				+ "b.prodPrice AS prodPrice,"
+				+ "a.orderCnt  AS orderCnt,"
+				+ "b.option1   AS option1,"
+				+ "b.option2   AS option2,"
+				+ "b.prodPrice*a.orderCnt AS tot "
+				+ "FROM orderinfo a "
+				+ "LEFT OUTER JOIN product b "
+				+ "ON a.prodNum = b.prodNum "
+				+ "LEFT OUTER JOIN delivery c "
+				+ "ON a.orderNum = c.orderNum ";
 		try {
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
+				dto.setOrderDate(rs.getDate("orderDate"));
+				dto.setOrderNum(rs.getInt("orderNum"));
+				dto.setProdTitle(rs.getString("prodTitle"));
+				dto.setProdCate(rs.getString("prodCate"));
+				dto.setProdPrice(rs.getInt("prodPrice"));
 				dto.setOrderCnt(rs.getInt("orderCnt"));
-				dto.setOrderNum(rs.getInt("orderCnt"));
-				dto.setProdNum(rs.getInt("prodNum"));
+				dto.setOption1(rs.getString("option1"));
+				dto.setOption2(rs.getString("option2"));
+				dto.setTot(rs.getInt("tot"));
 				
 				res.add(dto);
 			}
@@ -80,12 +100,16 @@ public class AdminDAO {
 	
 	public int total(){
 		int cnt = 0;
-		sql = "select count(*) from board";
+		sql = "SELECT "
+				+ "sum(b.prodPrice*a.orderCnt) AS total "
+				+ "FROM orderinfo a "
+				+ "LEFT OUTER JOIN product b "
+				+ "ON a.prodNum = b.prodNum ";
 		try {
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			rs.next();			
-			cnt = rs.getInt(1);
+			cnt = rs.getInt("total");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

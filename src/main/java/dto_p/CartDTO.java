@@ -2,7 +2,7 @@ package dto_p;
 
 public class CartDTO {
 	String cartTitle, cartFile,option1,option2,userId;
-	int prodPrice, prodNum,prodCnt;
+	int prodPrice, prodNum,prodCnt, no;
 	boolean prodChk;
 	public String getCartTitle() {
 		return cartTitle;
@@ -39,6 +39,12 @@ public class CartDTO {
 	}
 	public void setProdPrice(int prodPrice) {
 		this.prodPrice = prodPrice;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public int getProdNum() {
 		return prodNum;

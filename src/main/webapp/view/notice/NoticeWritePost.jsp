@@ -39,23 +39,17 @@
 <script>
  	function cancel(){
 		alert("취소되었습니다.")
-		location.href="BoardList"
+		location.href="NoticeList"
 	}
 </script>
 <h2>게시판 글쓰기</h2>
-<form action="WritePostHandler" method="post" enctype="multipart/form-data">
+<form action="NoticeWritePostHandler" method="post" enctype="multipart/form-data">
 	<div class="divContainer">
-		<select name="boardCate">
-			<option value="상품">상품</option>
-		  	<option value="주문/결제">주문/결제</option>
-		  	<option value="취소/교환/환불">취소/교환/환불</option>
-		  	<option value="기타">기타</option>
-		 </select>
 		<div class="inputText"><input type="text" placeholder="제목을 입력해주세요" name="writeTitle"/></div>
 		<div><textarea placeholder="내용을 입력해주세요" cols="30" rows="10" name="writeContent"></textarea></div>
 		<table border="" class = "table-cell">
 			<td>첨부파일</td>
-			<td><input type="file" name = "perFile"/></td>
+			<td><input type="file" name = "noticeFile"/></td>
 		</table>
 		<div class = "subButton">
 			<input type="submit" value="등록"/>

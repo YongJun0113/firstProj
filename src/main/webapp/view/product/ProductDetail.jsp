@@ -17,7 +17,7 @@
 		height:500px;
 		background-color:#0ff;
 	}
-	img{
+	.box1>div>img{
 		width:300px;
 		height:300px;
 		margin:25px;
@@ -62,25 +62,28 @@
 			var chk = confirm("장바구니로 이동하시겠습니까?");
 			 if(chk){
 				
-				location.href="/testProj/cart/CartReg?userId=aaa&prodCnt=${dto.prodNum }"
+				location.href="/firstProj/cart/CartReg?userId=aaa&prodCnt="+$("select[name='prodCnt']").val()
 					+"&prodPrice=${dto.prodPrice }"
 					+"&cartFile=${dto.prodFile }"
 					+"&cartTitle=${dto.prodTitle }"
 					+"&option1="+$("select[name='option1']").val()
 					+"&option2="+$("select[name='option2']").val()
 					+"&prodNum=${dto.prodNum }"
-					+"&chk=true";
+					+"&chk=true"
+					+"&userId=aaa";
 				 
 			 }else{
 				 
-				 location.href="/testProj/cart/CartReg?userId=aaa&prodCnt=${dto.prodNum }"
+				 location.href="/firstProj/cart/CartReg?userId=aaa&prodCnt="+$("select[name='prodCnt']").val()
 						+"&prodPrice=${dto.prodPrice }"
-						+"&prodFile=${dto.prodFile }"
-						+"&prodTitle=${dto.prodTitle }"
+						+"&cartFile=${dto.prodFile }"
+						+"&cartTitle=${dto.prodTitle }"
 						+"&option1="+$("select[name='option1']").val()
 						+"&option2="+$("select[name='option2']").val()
 						+"&prodNum=${dto.prodNum }"
-						+"&chk=false";
+						+"&chk=false"
+						+"&userId=aaa";
+
 			}
 			
 		})
@@ -106,7 +109,7 @@
 			<hr/>
 			<div>
 				<div>식품의 유형</div>
-				<div>커피</div>
+				<div>원두 커피</div>
 			</div>
 			<div>
 				<div>배송비</div>
@@ -136,6 +139,18 @@
 		                 <option value="더치 분쇄">더치 분쇄</option>
 		                 <option value="모카포트 분쇄">모카포트 분쇄</option>
 		                 <option value="에스프레소 분쇄">에스프레소 분쇄</option>
+           			 </select>
+				</div>
+			</div>
+			<div>
+			<div>수량</div>
+				<div>
+					 <select name="prodCnt">
+		                 <option value="1">1개</option>
+		                 <option value="2">2개</option>
+		                 <option value="3">3개</option>
+		                 <option value="4">4개</option>
+		                 <option value="5">5개</option>
            			 </select>
 				</div>
 			</div>
