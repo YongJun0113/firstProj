@@ -4,10 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-
-	/*
 	MemberDTO dto = new MemberDTO();
-	dto.setMemNum(request.getParameter("memNum"));
 	dto.setUserid(request.getParameter("userid"));
 	dto.setPw(request.getParameter("pw"));
 	dto.setUsername(request.getParameter("username"));
@@ -18,11 +15,9 @@
 	dto.setAddr(request.getParameter("addr"));
 	dto.setStatus(request.getParameter("status"));
 	
-	int cnt = new MemberDAO().write(dto);
+	int cnt = new MemberDAO().join(dto);
 	
 	System.out.println("회원가입완료:"+cnt);
-	*/
-
 %>
 <!DOCTYPE html>
 <html>

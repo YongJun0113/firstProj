@@ -6,9 +6,9 @@ import java.text.SimpleDateFormat;
 
 public class MemberDTO {
 	
-	String userid,pw,username,gender,tel,email,streetAddr,addr,dtailAddr,status,admin;
-	int postNum;
-	Date birth,createDate;
+	String userid,pw,username,gender,tel,birth,email,postNum,streetAddr,addr,dtailAddr,status,admin;
+	Date createDate;
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -75,16 +75,16 @@ public class MemberDTO {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-	public int getPostNum() {
+	public String getPostNum() {
 		return postNum;
 	}
-	public void setPostNum(int postNum) {
+	public void setPostNum(String postNum) {
 		this.postNum = postNum;
 	}
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(String birth) {
 		this.birth = birth;
 	}
 	public Date getCreateDate() {
@@ -94,10 +94,13 @@ public class MemberDTO {
 		this.createDate = createDate;
 	}
 	
+	/*
 	SimpleDateFormat birthsdf = new SimpleDateFormat("yyyy-MM-dd");
 	public String getBirthStr() {
 		return birthsdf.format(birth);
 	}
+	*/
+	/*
 	public void setBirthStr(String birth) {
 		try {
 			this.birth = birthsdf.parse(birth);
@@ -106,5 +109,6 @@ public class MemberDTO {
 			e.printStackTrace();
 		}
 	}
+	*/
 	
 }
